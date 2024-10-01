@@ -18,8 +18,7 @@ f = open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\script_parameters.
 lines = f.readlines()
 
 #store all the log file names in an array
-log_file_names_list = []
-log_file_names_found = False
+log_file_names_list = [] = False
 
 #loop through the file line by line
 for line in lines:
@@ -190,26 +189,90 @@ for file in log_file_names_list:
 
 
     #open the log files one by one
-    f = open(file, "r")
+    #approaching from a per device basis
+    #DEPLOYMENT
+    f = open 
+    #f = open("./logs/" + file, "r")
     lines = f.readlines()
+
+    #get the device's name from the log once
+    #2024 Sep 12 17:46:34 VOLTON-SW-CORE-25G-202 %DAEMON-3-SYSTEM_MSG: NTP: Peer 193.93.164.195 is unreachable - ntpd[17871]
+    first_split = lines[0].split("%")
+    #RESULT:
+    #2024 Sep 12 17:46:34 VOLTON-SW-CORE-25G-202 
+    #DAEMON-3-SYSTEM_MSG: NTP: Peer 193.93.164.195 is unreachable - ntpd[17871]
+    second_split = first_split[0].split(" ")
+    #RESULT:
+    #2024
+    #Sep
+    #12
+    #17:46:34
+    #VOLTON-SW-CORE-25G-202 
+    device_name = second_slpit[3]
+
+    #add the device to the list, if it is not already in:
+    guard = False
+    counter = 0
+    for device in network_devices_list:
+        if device.name == device_name:
+            guard = True
+            #store the device's position to avoid going through the list every time
+            device_position = counter
+        counter = counter + 1
+    #create a new object and add it to the list if it doesn't exist
+    if guard == False:
+        new_network_device = network_device(device_name)
+        network_devices_list.append(new_network_device)
+        device_position = len(network_devices_list) - 1
 
     for line in lines:
 
         try:
+            #check for BGP Adjacency Changes
             if "ADJCHANGE" in line:
                 #2024 Sep 19 14:11:23 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Down - recv:  other configuration change
                 #2024 Sep 19 14:11:34 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Up
                 #2024 Sep 23 13:44:21 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Down - recv:  session closed
                 #2024 Sep 23 13:44:38 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Up
-                first_split = line.split("neighbor ")
+                first_split = line.split(" neighbor ")
                 #RESULT:
-                #2024 Sep 19 14:11:34 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 
+                #2024 Sep 19 14:11:34 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) 
                 #10.116.27.1 Up
-                second_slpit = line.split(" ")
+                second_split = first_split[1].split(" ")
                 #RESULT:
                 #10.116.27.1
                 #Up
+                neighbor_IP = second_split[0].strip()
+                state = second_split[1].strip()
+                #if the state is not Up, look for the connection in the device
+                #if it exists, then if the state is the same, send no notification
+                #if the state is NOT the same, send a notification
+                guard = False
+                if state != "Up":
+                    for network_connection in network_devices_list[device_position].connections:
+                        if network_connection.type == "bgp" and network_connection.neighbor_IP == neighbor_IP and network_connection.state == state:
+                            guard = True
+                            break
+                        #else, if the connection and neighboring IP are the same, change the state and send notification
+                        elif network_connection.type == "bgp" and network_connection.neighbor_IP == neighbor_IP and network_connection.state != state:
+                            guard = True
+                            network_connection.state = state
+                            #send notification#
+                            #---notification---#
+                            #send notification#
 
+                #if the connection was not found, add the connection to the device and send notification:
+                if guard == False:
+                    new_connection = connection()
+                    new_connection.type = "bgp"
+                    new_connection.neighbor_IP = neighbor_IP
+                    new_connection.state = state
+                    network_devices_list[device_position].connections.append()
+                    #send notification#
+                    #---notification---#
+                    #send notification#
+
+                    
 
         except:
             pass
