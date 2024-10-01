@@ -1,0 +1,7 @@
+
+LOG_FILE_NAMES{
+    athe-93180-101.log
+    athe-93180-102.log
+    thes-93180-201.log
+    thes-93180-202.log
+}
