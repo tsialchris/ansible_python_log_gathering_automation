@@ -1,0 +1,50 @@
+2024 Sep 25 03:51:27 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[25319]
+2024 Sep 25 06:57:36 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: banner line contains invalid characters - dcos_sshd[14505]
+2024 Sep 25 07:39:21 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[8319]
+2024 Sep 25 09:10:37 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: Connection closed by remote host - dcos_sshd[1914]
+2024 Sep 25 10:50:26 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: banner line contains invalid characters - dcos_sshd[502]
+2024 Sep 25 15:02:06 VOLTON-SW-CORE-25G-201 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14581) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local
+2024 Sep 25 19:55:24 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: banner line contains invalid characters - dcos_sshd[3290]
+2024 Sep 25 21:33:35 VOLTON-SW-CORE-25G-201 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14581) Communications failure with the Cisco Smart License Utility (CSLU) : Communications failure
+2024 Sep 25 22:19:58 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[30395]
+2024 Sep 25 23:24:23 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[6166]
+2024 Sep 26 02:34:59 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[30301]
+2024 Sep 26 02:38:50 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: Connection closed by remote host - dcos_sshd[353]
+2024 Sep 26 04:05:00 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: banner line contains invalid characters - dcos_sshd[23248]
+2024 Sep 26 11:50:53 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[28228]
+2024 Sep 26 13:32:55 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[28345]
+2024 Sep 26 15:02:06 VOLTON-SW-CORE-25G-201 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14581) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local
+2024 Sep 26 15:10:27 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[25351]
+2024 Sep 26 17:07:46 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: banner line contains invalid characters - dcos_sshd[2549]
+2024 Sep 27 04:32:58 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[30225]
+2024 Sep 27 05:13:12 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: banner line contains invalid characters - dcos_sshd[23478]
+2024 Sep 27 09:11:44 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[13074]
+2024 Sep 27 13:39:36 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[21816]
+2024 Sep 27 14:17:57 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[13287]
+2024 Sep 27 14:54:50 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[4403]
+2024 Sep 27 15:02:06 VOLTON-SW-CORE-25G-201 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14581) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local
+2024 Sep 27 22:32:41 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[16982]
+2024 Sep 28 05:17:22 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: Connection closed by remote host - dcos_sshd[15338]
+2024 Sep 28 05:25:07 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: banner line contains invalid characters - dcos_sshd[20559]
+2024 Sep 28 06:59:53 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[16181]
+2024 Sep 28 13:10:47 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: banner line contains invalid characters - dcos_sshd[25273]
+2024 Sep 28 15:02:06 VOLTON-SW-CORE-25G-201 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14581) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local
+2024 Sep 28 18:37:19 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: Connection closed by remote host - dcos_sshd[18669]
+2024 Sep 28 23:57:41 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: banner line contains invalid characters - dcos_sshd[27513]
+2024 Sep 29 06:00:17 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: banner line contains invalid characters - dcos_sshd[31725]
+2024 Sep 29 10:45:44 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: Connection closed by remote host - dcos_sshd[19322]
+2024 Sep 29 12:15:46 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[11565]
+2024 Sep 29 14:13:16 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[21709]
+2024 Sep 29 15:02:06 VOLTON-SW-CORE-25G-201 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14581) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local
+2024 Sep 29 15:03:38 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: banner line contains invalid characters - dcos_sshd[21216]
+2024 Sep 29 16:27:14 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[9391]
+2024 Sep 29 20:47:32 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: banner line contains invalid characters - dcos_sshd[25697]
+2024 Sep 29 23:00:19 VOLTON-SW-CORE-25G-201 %BGP-5-ADJCHANGE:  bgp- [15893] (ISP_SERV) neighbor 10.106.27.1 Down - sent:  other configuration change
+2024 Sep 29 23:00:30 VOLTON-SW-CORE-25G-201 %BGP-5-ADJCHANGE:  bgp- [15893] (ISP_SERV) neighbor 10.106.27.1 Up
+2024 Sep 29 23:04:45 VOLTON-SW-CORE-25G-201 %BGP-5-ADJCHANGE:  bgp- [15893] (ISP_SERV) neighbor 10.106.27.1 Down - sent:  other configuration change
+2024 Sep 29 23:04:56 VOLTON-SW-CORE-25G-201 %BGP-5-ADJCHANGE:  bgp- [15893] (ISP_SERV) neighbor 10.106.27.1 Up
+2024 Sep 29 23:12:17 VOLTON-SW-CORE-25G-201 %BGP-5-ADJCHANGE:  bgp- [15893] (ISP_SERV) neighbor 10.106.27.1 Down - sent:  other configuration change
+2024 Sep 29 23:12:29 VOLTON-SW-CORE-25G-201 %BGP-5-ADJCHANGE:  bgp- [15893] (ISP_SERV) neighbor 10.106.27.1 Up
+2024 Sep 30 06:05:57 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: banner line contains invalid characters - dcos_sshd[25114]
+2024 Sep 30 06:20:26 VOLTON-SW-CORE-25G-201 %DAEMON-3-SYSTEM_MSG: error: kex_exchange_identification: read: Connection reset by peer - dcos_sshd[1771]
+2024 Sep 30 15:02:06 VOLTON-SW-CORE-25G-201 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14581) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local

@@ -1,0 +1,50 @@
+2024 Sep 24 09:52:58 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_DOWN_INITIALIZING: Interface Ethernet1/46 is down (Initializing)
+2024 Sep 24 09:52:58 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_DOWN_PORT_CHANNEL_MEMBERS_DOWN: Interface port-channel3 is down (No operational members)
+2024 Sep 24 09:52:58 VOLTON-SW-CORE-25G-101 %ETHPORT-5-SPEED: Interface port-channel3, operational speed changed to 1 Gbps
+2024 Sep 24 09:52:58 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_DUPLEX: Interface port-channel3, operational duplex mode changed to Full
+2024 Sep 24 09:52:58 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_RX_FLOW_CONTROL: Interface port-channel3, operational Receive Flow Control state changed to off
+2024 Sep 24 09:52:58 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_TX_FLOW_CONTROL: Interface port-channel3, operational Transmit Flow Control state changed to off
+2024 Sep 24 09:53:08 VOLTON-SW-CORE-25G-101 %ETH_PORT_CHANNEL-5-PORT_SUSPENDED: Ethernet1/46: Ethernet1/46 is suspended
+2024 Sep 24 11:33:08 VOLTON-SW-CORE-25G-101 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14410) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local
+2024 Sep 24 14:59:42 VOLTON-SW-CORE-25G-101 %ETH_PORT_CHANNEL-5-PORT_UP: port-channel3: Ethernet1/46 is up
+2024 Sep 24 14:59:43 VOLTON-SW-CORE-25G-101 %ETH_PORT_CHANNEL-5-FOP_CHANGED: port-channel3: first operational port changed from none to Ethernet1/46
+2024 Sep 24 14:59:43 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_BANDWIDTH_CHANGE: Interface port-channel3,bandwidth changed to 1000000 Kbit
+2024 Sep 24 14:59:43 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_UP: Interface Ethernet1/46 is up in mode trunk
+2024 Sep 24 14:59:43 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_UP: Interface port-channel3 is up in mode trunk
+2024 Sep 24 18:27:15 VOLTON-SW-CORE-25G-101 %AUTHPRIV-3-SYSTEM_MSG: pam_aaa:Authentication failed from 10.2.0.6 - dcos_sshd[14832]
+2024 Sep 24 18:27:15 VOLTON-SW-CORE-25G-101 %DAEMON-3-SYSTEM_MSG: error: PAM: Authentication failure for illegal user yanodd from 10.2.0.6 - dcos_sshd[14830]
+2024 Sep 24 18:27:27 VOLTON-SW-CORE-25G-101 %AUTHPRIV-3-SYSTEM_MSG: pam_aaa:Authentication failed from 10.2.0.6 - dcos_sshd[14951]
+2024 Sep 24 18:27:27 VOLTON-SW-CORE-25G-101 %DAEMON-3-SYSTEM_MSG: error: PAM: Authentication failure for illegal user yanodd from 10.2.0.6 - dcos_sshd[14830]
+2024 Sep 24 18:27:27 VOLTON-SW-CORE-25G-101 %DAEMON-3-SYSTEM_MSG: error: maximum authentication attempts exceeded for invalid user yanodd from 10.2.0.6 port 39890 ssh2 [preauth] - dcos_sshd[14830]
+2024 Sep 25 11:33:09 VOLTON-SW-CORE-25G-101 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14410) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local
+2024 Sep 25 12:06:57 VOLTON-SW-CORE-25G-101 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14410) Communications failure with the Cisco Smart License Utility (CSLU) : Communications failure
+2024 Sep 25 14:31:21 VOLTON-SW-CORE-25G-101 %VSHD-5-VSHD_SYSLOG_CONFIG_I: Configured from vty by raul.sobrin on 10.150.129.124@pts/2
+2024 Sep 25 18:29:55 VOLTON-SW-CORE-25G-101 %VSHD-5-VSHD_SYSLOG_CONFIG_I: Configured from vty by raul.sobrin on 10.150.129.124@pts/2 (message repeated 1 time)
+2024 Sep 25 23:04:06 VOLTON-SW-CORE-25G-101 %DAEMON-3-SYSTEM_MSG: NTP: Peer 127.127.1.0 is unreachable - ntpd[17829]
+2024 Sep 26 11:33:09 VOLTON-SW-CORE-25G-101 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14410) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local
+2024 Sep 27 11:33:09 VOLTON-SW-CORE-25G-101 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14410) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local  (message repeated 1 time)
+2024 Sep 27 15:09:13 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_DOWN_PORT_CHANNEL_MEMBERS_DOWN: Interface port-channel3 is down (No operational members)
+2024 Sep 27 15:09:13 VOLTON-SW-CORE-25G-101 %ETH_PORT_CHANNEL-5-FOP_CHANGED: port-channel3: first operational port changed from Ethernet1/46 to none
+2024 Sep 27 15:09:13 VOLTON-SW-CORE-25G-101 %ETH_PORT_CHANNEL-5-PORT_DOWN: port-channel3: Ethernet1/46 is down
+2024 Sep 27 15:09:13 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_BANDWIDTH_CHANGE: Interface port-channel3,bandwidth changed to 100000 Kbit
+2024 Sep 27 15:09:13 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_DOWN_INITIALIZING: Interface Ethernet1/46 is down (Initializing)
+2024 Sep 27 15:09:13 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_DOWN_PORT_CHANNEL_MEMBERS_DOWN: Interface port-channel3 is down (No operational members)
+2024 Sep 27 15:09:13 VOLTON-SW-CORE-25G-101 %ETHPORT-5-SPEED: Interface port-channel3, operational speed changed to 1 Gbps
+2024 Sep 27 15:09:13 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_DUPLEX: Interface port-channel3, operational duplex mode changed to Full
+2024 Sep 27 15:09:13 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_RX_FLOW_CONTROL: Interface port-channel3, operational Receive Flow Control state changed to off
+2024 Sep 27 15:09:13 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_TX_FLOW_CONTROL: Interface port-channel3, operational Transmit Flow Control state changed to off
+2024 Sep 27 15:09:23 VOLTON-SW-CORE-25G-101 %ETH_PORT_CHANNEL-5-PORT_SUSPENDED: Ethernet1/46: Ethernet1/46 is suspended
+2024 Sep 27 21:07:29 VOLTON-SW-CORE-25G-101 %ETH_PORT_CHANNEL-5-PORT_UP: port-channel3: Ethernet1/46 is up
+2024 Sep 27 21:07:29 VOLTON-SW-CORE-25G-101 %ETH_PORT_CHANNEL-5-FOP_CHANGED: port-channel3: first operational port changed from none to Ethernet1/46
+2024 Sep 27 21:07:29 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_BANDWIDTH_CHANGE: Interface port-channel3,bandwidth changed to 1000000 Kbit
+2024 Sep 27 21:07:29 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_UP: Interface Ethernet1/46 is up in mode trunk
+2024 Sep 27 21:07:29 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_UP: Interface port-channel3 is up in mode trunk
+2024 Sep 28 11:33:09 VOLTON-SW-CORE-25G-101 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14410) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local
+2024 Sep 29 11:33:09 VOLTON-SW-CORE-25G-101 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14410) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local  (message repeated 1 time)
+2024 Sep 29 23:00:24 VOLTON-SW-CORE-25G-101 %BGP-5-ADJCHANGE:  bgp- [21800] (ISP_SERV) neighbor 10.106.27.2 Down - recv:  session closed
+2024 Sep 29 23:00:30 VOLTON-SW-CORE-25G-101 %BGP-5-ADJCHANGE:  bgp- [21800] (ISP_SERV) neighbor 10.106.27.2 Up
+2024 Sep 29 23:04:50 VOLTON-SW-CORE-25G-101 %BGP-5-ADJCHANGE:  bgp- [21800] (ISP_SERV) neighbor 10.106.27.2 Down - recv:  session closed
+2024 Sep 29 23:04:56 VOLTON-SW-CORE-25G-101 %BGP-5-ADJCHANGE:  bgp- [21800] (ISP_SERV) neighbor 10.106.27.2 Up
+2024 Sep 29 23:12:22 VOLTON-SW-CORE-25G-101 %BGP-5-ADJCHANGE:  bgp- [21800] (ISP_SERV) neighbor 10.106.27.2 Down - recv:  session closed
+2024 Sep 29 23:12:29 VOLTON-SW-CORE-25G-101 %BGP-5-ADJCHANGE:  bgp- [21800] (ISP_SERV) neighbor 10.106.27.2 Up
+2024 Sep 30 11:33:09 VOLTON-SW-CORE-25G-101 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14410) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local

@@ -1,0 +1,50 @@
+2024 Sep 15 12:08:40 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local  (message repeated 1 time)
+2024 Sep 16 12:08:40 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local  (message repeated 1 time)
+2024 Sep 17 12:08:40 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local  (message repeated 1 time)
+2024 Sep 18 12:08:40 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local  (message repeated 1 time)
+2024 Sep 19 12:08:41 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local  (message repeated 1 time)
+2024 Sep 19 14:11:06 VOLTON-SW-CORE-25G-102 %ETHPORT-5-IF_UP: Interface loopback120 is up
+2024 Sep 19 14:11:15 VOLTON-SW-CORE-25G-102 %ETHPORT-5-IF_DOWN_ADMIN_DOWN: Interface loopback120 is down (Administratively down)
+2024 Sep 19 14:11:15 VOLTON-SW-CORE-25G-102 %ETHPORT-5-IF_UP: Interface loopback120 is up
+2024 Sep 19 14:11:23 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.106.95.1 Down - sent:  other configuration change
+2024 Sep 19 14:11:23 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+2024 Sep 19 14:11:33 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.106.95.1 Up
+2024 Sep 19 14:11:34 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Up
+2024 Sep 19 14:18:19 VOLTON-SW-CORE-25G-102 %VSHD-5-VSHD_SYSLOG_CONFIG_I: Configured from vty by raul.sobrin on 10.150.129.227@pts/2
+2024 Sep 19 14:29:05 VOLTON-SW-CORE-25G-102 %VSHD-5-VSHD_SYSLOG_CONFIG_I: Configured from vty by raul.sobrin on 10.150.129.227@pts/2 (message repeated 1 time)
+2024 Sep 20 08:12:41 VOLTON-SW-CORE-25G-102 %CALLHOME-2-EVENT: PERIODIC_CONFIGURATION
+2024 Sep 20 12:08:41 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local
+2024 Sep 21 12:08:01 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Communications failure
+2024 Sep 21 12:08:41 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local
+2024 Sep 22 12:08:41 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local  (message repeated 1 time)
+2024 Sep 23 12:08:41 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local  (message repeated 1 time)
+2024 Sep 23 13:44:16 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+2024 Sep 23 13:44:38 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Up
+2024 Sep 23 13:45:16 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+2024 Sep 23 13:45:38 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Up
+2024 Sep 23 13:48:16 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+2024 Sep 23 13:48:37 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Up
+2024 Sep 23 13:51:36 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+2024 Sep 23 13:51:58 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Up
+2024 Sep 23 13:55:00 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+2024 Sep 23 13:55:20 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Up
+2024 Sep 23 14:39:34 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+2024 Sep 23 14:39:54 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Up
+2024 Sep 23 14:49:20 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+2024 Sep 23 14:49:41 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Up
+2024 Sep 24 10:15:28 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+2024 Sep 24 10:15:48 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Up
+2024 Sep 24 12:08:41 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local
+2024 Sep 24 18:27:36 VOLTON-SW-CORE-25G-102 %AUTHPRIV-3-SYSTEM_MSG: pam_aaa:Authentication failed from 10.2.0.6 - dcos_sshd[21777]
+2024 Sep 24 18:27:36 VOLTON-SW-CORE-25G-102 %DAEMON-3-SYSTEM_MSG: error: PAM: Authentication failure for illegal user yanodd from 10.2.0.6 - dcos_sshd[21774]
+2024 Sep 24 18:27:39 VOLTON-SW-CORE-25G-102 %AUTHPRIV-3-SYSTEM_MSG: pam_aaa:Authentication failed from 10.2.0.6 - dcos_sshd[21791]
+2024 Sep 24 18:27:39 VOLTON-SW-CORE-25G-102 %DAEMON-3-SYSTEM_MSG: error: PAM: Authentication failure for illegal user yanodd from 10.2.0.6 - dcos_sshd[21774]
+2024 Sep 24 18:27:39 VOLTON-SW-CORE-25G-102 %DAEMON-3-SYSTEM_MSG: error: maximum authentication attempts exceeded for invalid user yanodd from 10.2.0.6 port 38756 ssh2 [preauth] - dcos_sshd[21774]
+2024 Sep 25 12:08:41 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local
+2024 Sep 26 12:08:41 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local  (message repeated 1 time)
+2024 Sep 27 08:13:49 VOLTON-SW-CORE-25G-102 %CALLHOME-2-EVENT: PERIODIC_CONFIGURATION
+2024 Sep 27 12:08:41 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local
+2024 Sep 28 12:08:01 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Communications failure
+2024 Sep 28 12:08:41 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local
+2024 Sep 29 12:08:41 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local  (message repeated 1 time)
+2024 Sep 30 12:08:42 VOLTON-SW-CORE-25G-102 %LICMGR-3-LOG_SMART_LIC_COMM_FAILED: (pid=14446) Communications failure with the Cisco Smart License Utility (CSLU) : Could not resolve host: cslu-local  (message repeated 1 time)
