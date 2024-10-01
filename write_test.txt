@@ -4,16 +4,19 @@ NETWORK_DEVICES{
 		INTERFACES{
 			Name=Interface_1
 			State=Down
-			Name=Interface_1
-			State=Down
 		}INTERFACES
 		CONNECTIONS{
-			Type=BGP
+			Type=bgp
 			Neighbor_IP=10.116.27.1
-			State=No_State
-			Type=BGP
-			Neighbor_IP=10.116.27.1
-			State=No_State
+			State=Down
+		}CONNECTIONS
+	}DEVICE
+	DEVICE{
+		VOLTON-SW-CORE-25G-101
+		CONNECTIONS{
+			Type=bgp
+			Neighbor_IP=10.106.27.2
+			State=Up
 		}CONNECTIONS
 	}DEVICE
 }NETWORK_DEVICES

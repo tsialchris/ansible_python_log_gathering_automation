@@ -18,7 +18,8 @@ f = open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\script_parameters.
 lines = f.readlines()
 
 #store all the log file names in an array
-log_file_names_list = [] = False
+log_file_names_list = [] 
+log_file_names_found = False
 
 #loop through the file line by line
 for line in lines:
@@ -85,6 +86,7 @@ if True:
                             new_connection = connection()
                             new_connection.type = first_split[1].strip()
                             device.connections.append(new_connection)
+                            #print(len(network_devices_list))
                 #else, if the Neighbor_IP is found
                 elif first_split[0].strip() == "Neighbor_IP":
                     for device in network_devices_list:
@@ -103,7 +105,9 @@ if True:
                         if device.name == temp_device_name:
                             for network_connection in device.connections:                                
                                 if network_connection.type == temp_connection_type and network_connection.neighbor_IP == temp_neighbor_IP:
-                                    network_connection.state == first_split[1].strip()
+                                    network_connection.state = first_split[1].strip()
+                                    #print(first_split[1].strip())
+                                    #print(network_connection.state)
             except:
                 pass
 
@@ -152,6 +156,7 @@ if True:
                     #store the device name temporarily to use within the loop, to associate
                     #the connections and interfaces with the correct device
                     temp_device_name = first_split[1].strip()
+                    #print(temp_device_name)
                     #if the network device does not already exist, only then add it
                     guard = False
                     for device in network_devices_list:
@@ -184,14 +189,13 @@ if True:
 
 #go through each log file:
 #BLOCK 2
-
 for file in log_file_names_list:
 
 
     #open the log files one by one
     #approaching from a per device basis
     #DEPLOYMENT
-    f = open 
+    f = open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\logs\athe-93180-101.log")
     #f = open("./logs/" + file, "r")
     lines = f.readlines()
 
@@ -208,7 +212,7 @@ for file in log_file_names_list:
     #12
     #17:46:34
     #VOLTON-SW-CORE-25G-202 
-    device_name = second_slpit[3]
+    device_name = second_split[4]
 
     #add the device to the list, if it is not already in:
     guard = False
@@ -221,15 +225,20 @@ for file in log_file_names_list:
         counter = counter + 1
     #create a new object and add it to the list if it doesn't exist
     if guard == False:
-        new_network_device = network_device(device_name)
-        network_devices_list.append(new_network_device)
+        appendable = network_device(device_name)
+        #print(network_devices_list[1].connections[0].type)
+        network_devices_list.append(appendable)
+        #print(len(network_devices_list))
+        #print(network_devices_list[1].connections[0].type)
         device_position = len(network_devices_list) - 1
 
-    for line in lines:
 
+    for line in lines:
+        #print(network_devices_list[device_position].connections[0].type)
         try:
             #check for BGP Adjacency Changes
             if "ADJCHANGE" in line:
+                #print("in ADJ")
                 #2024 Sep 19 14:11:23 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Down - recv:  other configuration change
                 #2024 Sep 19 14:11:34 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Up
                 #2024 Sep 23 13:44:21 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Down - recv:  session closed
@@ -243,40 +252,78 @@ for file in log_file_names_list:
                 #10.116.27.1
                 #Up
                 neighbor_IP = second_split[0].strip()
+                #print(neighbor_IP)
                 state = second_split[1].strip()
+                #print (neighbor_IP)
+                #print (state)
                 #if the state is not Up, look for the connection in the device
                 #if it exists, then if the state is the same, send no notification
                 #if the state is NOT the same, send a notification
                 guard = False
                 if state != "Up":
+                    #print("in")
+                    #print(guard)
+                    #if the connections list is not empty, look through it and find the connection
+                    #print (device_position)
+                    #print (network_devices_list[device_position].connections[0].type)
+                    #print (bool(network_devices_list[device_position].connections))
+                    if network_devices_list[device_position].connections:
+                        for network_connection in network_devices_list[device_position].connections:
+                            if network_connection.type == "bgp" and network_connection.neighbor_IP == neighbor_IP and network_connection.state == state:
+                                #print("in")
+                                guard = True
+                                break
+                            #else, if the connection and neighboring IP are the same, change the state and send notification
+                            elif network_connection.type == "bgp" and network_connection.neighbor_IP == neighbor_IP and network_connection.state != state:
+                                #print("in")
+                                guard = True
+                                network_connection.state = state
+                                network_connection.changed_state = True
+                        #print (guard)
+                        #if the connection was not found, but the state is down; add the connection to the device and change the changed_state var
+                        if guard == False:
+                            #print("in if")
+                            #print (neighbor_IP)
+                            #print (state)
+                            new_connection = connection()
+                            new_connection.type = "bgp"
+                            new_connection.neighbor_IP = neighbor_IP
+                            new_connection.state = state
+                            #print ("test")
+                            network_connection.append(new_connection)
+                            network_connection.changed_state = True
+                    #else, if the connections list is empty, simply add the element
+                    else:
+                        #print("in else")
+                        #print (neighbor_IP)
+                        #print (state)
+                        new_connection = connection()
+                        new_connection.type = "bgp"
+                        new_connection.neighbor_IP = neighbor_IP
+                        new_connection.state = state
+                        #print ("test")
+                        network_devices_list[device_position].connections.append(new_connection)
+                        network_devices_list[device_position].connections.changed_state = True
+                            
+                            
+                #if state is Up, search for the connection, if it was down, update it and send notification
+                else:
+                    #print("else")
                     for network_connection in network_devices_list[device_position].connections:
-                        if network_connection.type == "bgp" and network_connection.neighbor_IP == neighbor_IP and network_connection.state == state:
-                            guard = True
-                            break
-                        #else, if the connection and neighboring IP are the same, change the state and send notification
-                        elif network_connection.type == "bgp" and network_connection.neighbor_IP == neighbor_IP and network_connection.state != state:
-                            guard = True
+                        if network_connection.type == "bgp" and network_connection.neighbor_IP == neighbor_IP and network_connection.state != state:
+                            #print("in")
                             network_connection.state = state
-                            #send notification#
-                            #---notification---#
-                            #send notification#
-
-                #if the connection was not found, add the connection to the device and send notification:
-                if guard == False:
-                    new_connection = connection()
-                    new_connection.type = "bgp"
-                    new_connection.neighbor_IP = neighbor_IP
-                    new_connection.state = state
-                    network_devices_list[device_position].connections.append()
-                    #send notification#
-                    #---notification---#
-                    #send notification#
-
+                            network_connection.changed_state = True
                     
 
         except:
             pass
 
+#SEND NOTIFICATIONS FOR ALL connections and interfaces WITH changed_state == True
+
+
+
+#SEND NOTIFICATIONS END
 
 #BLOCK 2 - END
 
@@ -286,6 +333,12 @@ for file in log_file_names_list:
 #DEPLOYMENT
 f = open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\write_test.txt", "w")
 #f = open("network_devices.txt", "w")
+#print (network_devices_list[0].name)
+#print (network_devices_list[0].connections[0].neighbor_IP)
+#print (network_devices_list[0].connections[1].neighbor_IP)
+#print (network_devices_list[1].name)
+#print (network_devices_list[1].connections[0].neighbor_IP)
+#print (network_devices_list[1].connections[1].neighbor_IP)
 
 f.write("NETWORK_DEVICES{\n")
 
