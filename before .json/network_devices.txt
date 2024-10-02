@@ -1,0 +1,15 @@
+
+NETWORK_DEVICES{
+	DEVICE{
+		Name=VOLTON-SW-CORE-25G-202
+		INTERFACES{
+			Name=Interface_1
+			State=Down
+		}INTERFACES
+        CONNECTIONS{
+            Type=bgp
+            Neighbor_IP=10.116.27.1
+            State=Down
+        }CONNECTIONS
+    }DEVICE
+}NETWORK_DEVICES

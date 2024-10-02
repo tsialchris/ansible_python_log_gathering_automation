@@ -1,0 +1,42 @@
+[all:vars]
+ansible_user=admvolton
+ansible_password=sPAr3Me!TH3BS!pLs5
+ansible_become=False
+#become_pass=
+#ansible_network_os=ios
+ansible_network_os=nxos
+
+[asa]
+#athe-asa ansible_host=10.106.4.1
+athe-asav-101 ansible_host=10.106.4.201
+athe-asav-102 ansible_host=10.106.4.202
+#thes-asa ansible_host=10.116.4.1
+thes-asav-201 ansible_host=10.116.4.201
+thes-asav-202 ansible_host=10.116.4.202
+
+[iosxe]
+athe-8000v-101 ansible_host=10.106.4.203
+athe-8000v-102 ansible_host=10.106.4.204
+athe-9300-101 ansible_host=10.106.4.205
+athe-9300-102 ansible_host=10.106.4.206
+athe-9200 ansible_host=10.106.4.207
+thes-8000v-201 ansible_host=10.116.4.203
+thes-8000v-202 ansible_host=10.116.4.204
+thes-9300-201 ansible_host=10.116.4.205
+thes-9300-202 ansible_host=10.116.4.206
+thes-9200 ansible_host=10.116.4.207
+
+[nxos]
+athe-93180-101 ansible_host=10.106.4.208 ansible_network_os=nxos ansible_connection=network_cli
+athe-93180-102 ansible_host=10.106.4.209 ansible_network_os=nxos ansible_connection=network_cli
+thes-93180-201 ansible_host=10.116.4.208 ansible_network_os=nxos ansible_connection=network_cli
+thes-93180-202 ansible_host=10.116.4.209 ansible_network_os=nxos ansible_connection=network_cli
+
+[8000v]
+athe-8000v-101 ansible_host=10.106.4.203
+athe-8000v-102 ansible_host=10.106.4.204
+thes-8000v-201 ansible_host=10.116.4.203
+thes-8000v-202 ansible_host=10.116.4.204
+
+[test]
+athe-93180-101 ansible_host=10.106.4.208 ansible_network_os=nxos
