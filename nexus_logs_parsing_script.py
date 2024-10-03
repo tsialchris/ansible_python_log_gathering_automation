@@ -1,9 +1,12 @@
 
 import os
 
+import json
+
 from network_objects import network_device
 from network_objects import network_interface
 from network_objects import connection
+from network_functions import check_for_element
 
 #list with all network devices with logs
 #will contain network_device objects
@@ -41,149 +44,20 @@ f.close()
 
 #BLOCK 1
 
-#if the network_devices.txt file exists, parse it to get info
+#if the network_devices.json file exists, parse it to get info
 #DEPLOYMENT
-#if os.path.isfile("./network_devices.txt"):
+#if os.path.isfile("./network_devices.json"):
 if True:
-    #control variables for network_devices.txt parsing
-    network_devices_found = False
-    device_found = False
-    interfaces_found = False
-    connections_found = False
-    #get device objects from the network_devices.txt file
     #DEPLOYMENT
-    f = open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\network_devices.txt", "r")
-    #f = open("network_devices.txt", "r")
-    lines = f.readlines()
-    for line in lines:
+    #with open(r"network_devices.json", "r") as file:
+    with open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\network_devices.json", "r") as file:
+        json_devices = json.load(file)
 
+    #print(json_devices[0])
+    #print(json_devices[0]['name'])
+    #print(json_devices[0]['interfaces'][0])
 
-        if line.strip() == "}NETWORK_DEVICES":
-            network_devices_found = False
-            break
-        
-        elif line.strip() == "}DEVICE":
-            device_found = False
-        
-        elif line.strip() == "}CONNECTIONS":
-            connections_found = False
-
-        elif line.strip() == "}INTERFACES":
-            interfaces_found = False
-
-        #Get Connection Data
-        if network_devices_found and device_found and interfaces_found == False and connections_found:
-            try:
-                #Type=BGP
-                first_split = line.split("=")
-                #print(first_split[1])
-                #if the Type is found
-                if first_split[0].strip() == "Type":
-                    for device in network_devices_list:
-                        if device.name == temp_device_name:
-                            #store the connection's type temporarily for checks State
-                            temp_connection_type = first_split[1].strip()
-                            new_connection = connection()
-                            new_connection.type = first_split[1].strip()
-                            device.connections.append(new_connection)
-                            #print(len(network_devices_list))
-                #else, if the Neighbor_IP is found
-                elif first_split[0].strip() == "Neighbor_IP":
-                    for device in network_devices_list:
-                        if device.name == temp_device_name:
-                            #store the Neighbor's ip temporarily for checks in State
-                            temp_neighbor_IP = first_split[1].strip()
-                            #find the connection with no neighbor ip added (meaning it's new)
-                            #and add this neighbor ip
-                            for network_connection in device.connections:
-                                #if type is correct and neighbor ip is not provided
-                                if network_connection.type == temp_connection_type and network_connection.neighbor_IP == "No_IP":
-                                    network_connection.neighbor_IP = first_split[1].strip()
-                #else if the State is found
-                elif first_split[0].strip() == "State":
-                    for device in network_devices_list:
-                        if device.name == temp_device_name:
-                            for network_connection in device.connections:                                
-                                if network_connection.type == temp_connection_type and network_connection.neighbor_IP == temp_neighbor_IP:
-                                    network_connection.state = first_split[1].strip()
-                                    #print(first_split[1].strip())
-                                    #print(network_connection.state)
-            except:
-                pass
-
-        #Get Interface Data
-        elif network_devices_found and device_found and interfaces_found and connections_found == False:
-            try:
-                #Name=Interface_1
-                first_split = line.split("=")
-                #RESULT:
-                #Name
-                #Interface_1
-                #if the Name is found, create the interface and assign it to the correct device
-                if first_split[0].strip() == "Name":
-                    #find the associated device based on its name
-                    for device in network_devices_list:
-                        if device.name == temp_device_name:
-                            #store the interface's name temporarily for use in State Check
-                            temp_interface_name = first_split[1].strip()
-                            #create new network interface object
-                            new_network_interface = network_interface()
-                            #assign the name to the interface
-                            new_network_interface.name = first_split[1].strip()
-                            #append it to the device's list
-                            device.network_interfaces.append(new_network_interface)
-                
-                #else, if the State is found
-                #State=Down
-                elif first_split[0].strip() == "State":
-                    for device in network_devices_list:
-                        if device.name == temp_device_name:
-
-                            #assign the state to the correct interface
-                            for interface in device.network_interfaces:
-                                if interface.name == temp_interface_name:
-                                    interface.state = first_split[1].strip()
-
-            except:
-                pass
-
-        #Get Device Name
-        elif network_devices_found and device_found and interfaces_found == False and connections_found == False:
-            try:
-                #Name=VOLTON-SW-CORE-25G-202
-                first_split = line.split("=")
-                if first_split[0].strip() == "Name":
-                    #store the device name temporarily to use within the loop, to associate
-                    #the connections and interfaces with the correct device
-                    temp_device_name = first_split[1].strip()
-                    #print(temp_device_name)
-                    #if the network device does not already exist, only then add it
-                    guard = False
-                    for device in network_devices_list:
-                        if device.name == first_split[1].strip():
-                            guard = True
-                    if guard == False:
-                        new_network_device = network_device(first_split[1].strip())
-                        network_devices_list.append(new_network_device)
-            except:
-                pass
-        
-
-        if line.strip() == "INTERFACES{":
-            interfaces_found = True
-
-        elif line.strip() == "CONNECTIONS{":
-            connections_found = True
-
-        elif line.strip() == "DEVICE{":
-            device_found = True
-
-        elif line.strip() == "NETWORK_DEVICES{":
-            network_devices_found = True
-        
-
-
-    f.close()
+    #print(json_devices)
 
 #BLOCK 1 - END
 
@@ -213,24 +87,28 @@ for file in log_file_names_list:
     #17:46:34
     #VOLTON-SW-CORE-25G-202 
     device_name = second_split[4]
-
+    
     #add the device to the list, if it is not already in:
     guard = False
     counter = 0
-    for device in network_devices_list:
-        if device.name == device_name:
+    for device in json_devices:
+        #print(device)
+        if device["name"] == device_name:
             guard = True
             #store the device's position to avoid going through the list every time
             device_position = counter
         counter = counter + 1
     #create a new object and add it to the list if it doesn't exist
     if guard == False:
-        appendable = network_device(device_name)
-        #print(network_devices_list[1].connections[0].type)
-        network_devices_list.append(appendable)
-        #print(len(network_devices_list))
-        #print(network_devices_list[1].connections[0].type)
-        device_position = len(network_devices_list) - 1
+
+        new_device = {"name": device_name, "interfaces": [], "connections": []}
+
+        json_devices.append(new_device)
+
+        #print(json_devices[0])
+        #print(json_devices["name"][device_name])
+        #print(json_devices)
+        device_position = len(json_devices) - 1
 
 
     for line in lines:
@@ -260,6 +138,7 @@ for file in log_file_names_list:
                 #if it exists, then if the state is the same, send no notification
                 #if the state is NOT the same, send a notification
                 guard = False
+                #print(json_devices[device_position]["connections"])
                 if state != "Up":
                     #print("in")
                     #print(guard)
@@ -267,8 +146,11 @@ for file in log_file_names_list:
                     #print (device_position)
                     #print (network_devices_list[device_position].connections[0].type)
                     #print (bool(network_devices_list[device_position].connections))
-                    if network_devices_list[device_position].connections:
-                        for network_connection in network_devices_list[device_position].connections:
+                    #if network_devices_list[device_position].connections:
+                    # print(json_devices[device_position])
+                    # print(json_devices[device_position]["connections"])
+                    if json_devices[device_position]["connections"]:
+                        for network_connection in json_devices[device_position].connections:
                             if network_connection.type == "bgp" and network_connection.neighbor_IP == neighbor_IP and network_connection.state == state:
                                 #print("in")
                                 guard = True
@@ -331,7 +213,7 @@ for file in log_file_names_list:
 #write the network_devices.txt
 
 #DEPLOYMENT
-f = open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\write_test.txt", "w")
+f = open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\write_test_json.txt", "w")
 #f = open("network_devices.txt", "w")
 #print (network_devices_list[0].name)
 #print (network_devices_list[0].connections[0].neighbor_IP)

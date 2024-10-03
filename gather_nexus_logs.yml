@@ -6,7 +6,7 @@
    tasks:
 
    - name: Log gathering command
-     cisco.nxos.nxos_command:
+     nxos_command:
        commands:
          #show the last 50 log entries
          - show logging last 50

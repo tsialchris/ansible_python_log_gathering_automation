@@ -1,0 +1,45 @@
+[
+    {
+        "name": "VOLTON-SW-CORE-25G-202",
+        "interfaces":[
+            {
+                "name": "Interface1",
+                "state": "down"
+            },
+            {
+                "name": "Interface2",
+                "state": "up"
+            }
+        ],
+        "connections":[
+            {
+                "type": "bgp",
+                "neighbor_IP": "10.116.27.1",
+                "state": "down"
+            },
+            {
+                "type": "bgp",
+                "neighbor_IP": "10.116.27.2",
+                "state": "up"
+            }
+        ]
+    }
+,
+    {
+        "name": "VOLTON-SW-CORE-25G-201",
+        "interfaces":[
+            {
+                "name": "Interface2",
+                "state": "down"
+            }
+        ],
+        "connections":
+        [
+            {
+                "type": "bgp",
+                "neighbor_IP": "10.116.27.2",
+                "state": "down"
+            }
+        ]
+    }
+]
