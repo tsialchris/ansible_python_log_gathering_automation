@@ -14,7 +14,8 @@ network_devices_list = []
 
 #parse the script_parameters.txt
 #DEPLOYMENT
-f = open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\script_parameters.txt", "r")
+#f = open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\script_parameters.txt", "r")
+f = open(r"C:\Users\Chris\Desktop\ansible_python_log_gathering_automation-main\script_parameters.txt", "r")
 #f = open("script_parameters.txt", "r")
 
 #read all the lines and store them in "lines"
@@ -50,7 +51,8 @@ f.close()
 if True:
     #DEPLOYMENT
     #with open(r"network_devices.json", "r") as file:
-    with open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\network_devices.json", "r") as file:
+    #with open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\network_devices.json", "r") as file:
+    with open(r"C:\Users\Chris\Desktop\ansible_python_log_gathering_automation-main\network_devices.json", "r") as file:
         json_devices = json.load(file)
 
     #print(json_devices[0])
@@ -69,7 +71,8 @@ for file in log_file_names_list:
     #open the log files one by one
     #approaching from a per device basis
     #DEPLOYMENT
-    f = open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\logs\athe-93180-101.log")
+    #f = open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\logs\athe-93180-101.log")
+    f = open(r"C:\Users\Chris\Desktop\ansible_python_log_gathering_automation-main\logs\athe-93180-101.log")
     #f = open("./logs/" + file, "r")
     lines = f.readlines()
 
@@ -138,68 +141,70 @@ for file in log_file_names_list:
                 #if it exists, then if the state is the same, send no notification
                 #if the state is NOT the same, send a notification
                 guard = False
+
+                #keep track of the initial state, if it ends up not changing
+                #(in the last log entry referring to it), do not send the notification
+                initial_state = state
+
                 #print(json_devices[device_position]["connections"])
                 if state != "Up":
                     #print("in")
                     #print(guard)
                     #if the connections list is not empty, look through it and find the connection
-                    #print (device_position)
-                    #print (network_devices_list[device_position].connections[0].type)
-                    #print (bool(network_devices_list[device_position].connections))
                     #if network_devices_list[device_position].connections:
                     # print(json_devices[device_position])
                     # print(json_devices[device_position]["connections"])
                     if json_devices[device_position]["connections"]:
-                        for network_connection in json_devices[device_position].connections:
-                            if network_connection.type == "bgp" and network_connection.neighbor_IP == neighbor_IP and network_connection.state == state:
+                        for network_connection in json_devices[device_position]["connections"]:
+                            #if the state is the same as the initial, break
+                            if network_connection["type"] == "bgp" and network_connection["neighbor_IP"] == neighbor_IP and network_connection["state"] == state:
                                 #print("in")
                                 guard = True
                                 break
-                            #else, if the connection and neighboring IP are the same, change the state and send notification
-                            elif network_connection.type == "bgp" and network_connection.neighbor_IP == neighbor_IP and network_connection.state != state:
+                            #else, if the connection and neighboring IP are the same, change the state
+                            elif network_connection["type"] == "bgp" and network_connection["neighbor_IP"] == neighbor_IP and network_connection["state"] != state:
                                 #print("in")
                                 guard = True
-                                network_connection.state = state
-                                network_connection.changed_state = True
+                                network_connection["state"] = state
                         #print (guard)
                         #if the connection was not found, but the state is down; add the connection to the device and change the changed_state var
                         if guard == False:
                             #print("in if")
                             #print (neighbor_IP)
                             #print (state)
-                            new_connection = connection()
-                            new_connection.type = "bgp"
-                            new_connection.neighbor_IP = neighbor_IP
-                            new_connection.state = state
+                            new_connection = dict()
+                            new_connection["type"] = "bgp"
+                            new_connection["neighbor_IP"] = neighbor_IP
+                            new_connection["state"] = state
                             #print ("test")
                             network_connection.append(new_connection)
-                            network_connection.changed_state = True
                     #else, if the connections list is empty, simply add the element
                     else:
                         #print("in else")
                         #print (neighbor_IP)
                         #print (state)
-                        new_connection = connection()
-                        new_connection.type = "bgp"
-                        new_connection.neighbor_IP = neighbor_IP
-                        new_connection.state = state
+                        new_connection = dict()
+                        new_connection["type"] = "bgp"
+                        new_connection["neighbor_IP"] = neighbor_IP
+                        new_connection["state"] = state
                         #print ("test")
-                        network_devices_list[device_position].connections.append(new_connection)
-                        network_devices_list[device_position].connections.changed_state = True
+                        json_devices[device_position]["connections"].append(new_connection)
                             
                             
                 #if state is Up, search for the connection, if it was down, update it and send notification
                 else:
                     #print("else")
-                    for network_connection in network_devices_list[device_position].connections:
-                        if network_connection.type == "bgp" and network_connection.neighbor_IP == neighbor_IP and network_connection.state != state:
+                    for network_connection in network_devices_list[device_position]["connections"]:
+                        if network_connection["type"] == "bgp" and network_connection["neighbor_IP"] == neighbor_IP and network_connection["state"] != state:
                             #print("in")
-                            network_connection.state = state
-                            network_connection.changed_state = True
+                            network_connection["state"] = state
                     
 
         except:
             pass
+
+
+f.close()
 
 #SEND NOTIFICATIONS FOR ALL connections and interfaces WITH changed_state == True
 
@@ -209,43 +214,13 @@ for file in log_file_names_list:
 
 #BLOCK 2 - END
 
-#after everything is done
-#write the network_devices.txt
+# After everything is done
+# Writing file in .json format
+# DEPLOYMENT
+#with open("write_test_json.json", "w") as outfile:
+# with open("write_test_json.json", "w") as outfile:
+#     json.dump(json_devices, outfile)
+#     #outfile.write(json_devices)
 
-#DEPLOYMENT
-f = open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\write_test_json.txt", "w")
-#f = open("network_devices.txt", "w")
-#print (network_devices_list[0].name)
-#print (network_devices_list[0].connections[0].neighbor_IP)
-#print (network_devices_list[0].connections[1].neighbor_IP)
-#print (network_devices_list[1].name)
-#print (network_devices_list[1].connections[0].neighbor_IP)
-#print (network_devices_list[1].connections[1].neighbor_IP)
-
-f.write("NETWORK_DEVICES{\n")
-
-for device in network_devices_list:
-    f.write("\tDEVICE{\n")
-    f.write("\t\t" + str(device.name) + "\n")
-    #if the network_interfaces list for this device is not empty
-    if device.network_interfaces:
-        f.write("\t\tINTERFACES{\n")
-        for interface in device.network_interfaces:
-            f.write("\t\t\tName=" + str(interface.name) + "\n")
-            f.write("\t\t\tState=" + str(interface.state) + "\n")
-
-        f.write("\t\t}INTERFACES\n")
-
-    #if the connections list for this device is not empty
-    if device.connections:
-        f.write("\t\tCONNECTIONS{\n")
-        for network_connection in device.connections:
-            f.write("\t\t\tType=" + str(network_connection.type) + "\n")
-            f.write("\t\t\tNeighbor_IP=" + str(network_connection.neighbor_IP) + "\n")
-            f.write("\t\t\tState=" + str(network_connection.state) + "\n")
-
-        f.write("\t\t}CONNECTIONS\n")
-
-    f.write("\t}DEVICE\n")
-
-f.write("}NETWORK_DEVICES")
+with open('network_devices.json', 'w', encoding='utf-8') as f:
+    json.dump(json_devices, f, ensure_ascii=False, indent=4)

@@ -1,21 +1,21 @@
 [
     {
         "name": "VOLTON-SW-CORE-25G-202",
-        "interfaces":[
+        "interfaces": [
             {
                 "name": "Interface1",
-                "state": "down"
+                "state": "Down"
             },
             {
                 "name": "Interface2",
                 "state": "up"
             }
         ],
-        "connections":[
+        "connections": [
             {
                 "type": "bgp",
                 "neighbor_IP": "10.116.27.1",
-                "state": "down"
+                "state": "Down"
             },
             {
                 "type": "bgp",
@@ -23,22 +23,31 @@
                 "state": "up"
             }
         ]
-    }
-,
+    },
     {
         "name": "VOLTON-SW-CORE-25G-201",
-        "interfaces":[
+        "interfaces": [
             {
                 "name": "Interface2",
-                "state": "down"
+                "state": "Down"
             }
         ],
-        "connections":
-        [
+        "connections": [
             {
                 "type": "bgp",
                 "neighbor_IP": "10.116.27.2",
-                "state": "down"
+                "state": "Down"
+            }
+        ]
+    },
+    {
+        "name": "VOLTON-SW-CORE-25G-101",
+        "interfaces": [],
+        "connections": [
+            {
+                "type": "bgp",
+                "neighbor_IP": "10.106.27.2",
+                "state": "Down"
             }
         ]
     }
