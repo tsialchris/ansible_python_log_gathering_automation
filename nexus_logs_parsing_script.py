@@ -14,9 +14,9 @@ network_devices_list = []
 
 #parse the script_parameters.txt
 #DEPLOYMENT
-f = open(r"C:\Users\c.tsialamanis\Desktop\ansible_python_log_gathering_automation-main\script_parameters.txt", "r")
+# f = open(r"C:\Users\c.tsialamanis\Desktop\ansible_python_log_gathering_automation-main\script_parameters.txt", "r")
 # f = open(r"C:\Users\Chris\Desktop\ansible_python_log_gathering_automation-main\script_parameters.txt", "r")
-#f = open("script_parameters.txt", "r")
+f = open("script_parameters.txt", "r")
 
 #read all the lines and store them in "lines"
 lines = f.readlines()
@@ -47,11 +47,11 @@ json_devices = []
 
 #if the network_devices.json file exists, parse it to get info
 #DEPLOYMENT
-#if os.path.isfile("./network_devices.json"):
-if True:
+if os.path.isfile("./network_devices.json"):
+# if True:
     #DEPLOYMENT
-    #with open(r"network_devices.json", "r") as file:
-    with open(r"C:\Users\c.tsialamanis\Desktop\ansible_python_log_gathering_automation-main\network_devices.json", "r") as file:
+    with open(r"network_devices.json", "r") as file:
+    # with open(r"C:\Users\c.tsialamanis\Desktop\ansible_python_log_gathering_automation-main\network_devices.json", "r") as file:
     # with open(r"C:\Users\Chris\Desktop\ansible_python_log_gathering_automation-main\network_devices.json", "r") as file:
         json_devices = json.load(file)
 
@@ -71,9 +71,9 @@ for file in log_file_names_list:
     #open the log files one by one
     #approaching from a per device basis
     #DEPLOYMENT
-    f = open(r"C:\Users\c.tsialamanis\Desktop\ansible_python_log_gathering_automation-main\logs\athe-93180-101.log")
+    # f = open(r"C:\Users\c.tsialamanis\Desktop\ansible_python_log_gathering_automation-main\logs\athe-93180-101.log")
     # f = open(r"C:\Users\Chris\Desktop\ansible_python_log_gathering_automation-main\logs\athe-93180-101.log")
-    #f = open("./logs/" + file, "r")
+    f = open("./logs/" + file, "r")
     lines = f.readlines()
 
     #get the device's name from the log once
@@ -228,6 +228,7 @@ for file in log_file_names_list:
                 #print(json.dumps(network_connection, ensure_ascii=False, indent=4))
                 notification_body = json.dumps(network_connection, ensure_ascii=False, indent=4)
                 #send_email(notification_subject, notification_body)
+            network_connection["state"] = network_connection["previous_state"]
 
 
 f.close()

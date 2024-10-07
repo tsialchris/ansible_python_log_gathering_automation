@@ -1,7 +1,7 @@
 ---
  - name: Gather Logs for NEXUS switches
    hosts: nxos
-   #gather_facts: no
+   gather_facts: no
 
    tasks:
 
@@ -20,7 +20,7 @@
        #content: "{{ config.stdout }}"
 
        content: "{{ item }}"
-       dest: "show-output/{{ inventory_hostname }}.log"
+       dest: "./logs/{{ inventory_hostname }}.log"
      with_items: "{{ config.stdout }}"
      #delegate_to: nxos
 
