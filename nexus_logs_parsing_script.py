@@ -113,7 +113,7 @@ for file in log_file_names_list:
         #print(json_devices)
         device_position = len(json_devices) - 1
 
-    print(device_position)
+    #print(device_position)
 
 
     for line in lines:
@@ -146,6 +146,7 @@ for file in log_file_names_list:
 
                 #print(json_devices[device_position]["connections"])
                 if state != "Up":
+                    #print(state)
                     #print("in")
                     #print(guard)
                     #if the connections list is not empty, look through it and find the connection
@@ -206,9 +207,10 @@ for file in log_file_names_list:
                             
                 #if state is Up, search for the connection, if it was down, update it and send notification
                 else:
-                    #print("else")
+                    #print(state)
                     for network_connection in json_devices[device_position]["connections"]:
-                        if network_connection["type"] == "bgp" and network_connection["neighbor_IP"] == neighbor_IP and network_connection["state"] != state:
+                        # if network_connection["type"] == "bgp" and network_connection["neighbor_IP"] == neighbor_IP and network_connection["state"] != state:
+                        if network_connection["type"] == "bgp" and network_connection["neighbor_IP"] == neighbor_IP:
                             #print("in")
                             network_connection["state"] = state
 
@@ -216,7 +218,6 @@ for file in log_file_names_list:
             pass
 
     print(json_devices[0]["connections"][0]["state"])
-
 
     for device in json_devices:
         for network_connection in device["connections"]:
@@ -228,7 +229,7 @@ for file in log_file_names_list:
                 #print(json.dumps(network_connection, ensure_ascii=False, indent=4))
                 notification_body = json.dumps(network_connection, ensure_ascii=False, indent=4)
                 send_email(notification_subject, notification_body)
-            network_connection["state"] = network_connection["previous_state"]
+            network_connection["previous_state"] = network_connection["state"]
 
 
 f.close()
