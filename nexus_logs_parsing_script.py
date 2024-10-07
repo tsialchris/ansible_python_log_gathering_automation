@@ -6,7 +6,7 @@ import json
 from network_objects import network_device
 from network_objects import network_interface
 from network_objects import connection
-from network_functions import check_for_element
+from send_notification import send_email
 
 #list with all network devices with logs
 #will contain network_device objects
@@ -14,8 +14,8 @@ network_devices_list = []
 
 #parse the script_parameters.txt
 #DEPLOYMENT
-#f = open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\script_parameters.txt", "r")
-f = open(r"C:\Users\Chris\Desktop\ansible_python_log_gathering_automation-main\script_parameters.txt", "r")
+f = open(r"C:\Users\c.tsialamanis\Desktop\ansible_python_log_gathering_automation-main\script_parameters.txt", "r")
+# f = open(r"C:\Users\Chris\Desktop\ansible_python_log_gathering_automation-main\script_parameters.txt", "r")
 #f = open("script_parameters.txt", "r")
 
 #read all the lines and store them in "lines"
@@ -42,7 +42,7 @@ f.close()
 #print(*log_file_names_list)
 
 
-
+json_devices = []
 #BLOCK 1
 
 #if the network_devices.json file exists, parse it to get info
@@ -51,8 +51,8 @@ f.close()
 if True:
     #DEPLOYMENT
     #with open(r"network_devices.json", "r") as file:
-    #with open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\network_devices.json", "r") as file:
-    with open(r"C:\Users\Chris\Desktop\ansible_python_log_gathering_automation-main\network_devices.json", "r") as file:
+    with open(r"C:\Users\c.tsialamanis\Desktop\ansible_python_log_gathering_automation-main\network_devices.json", "r") as file:
+    # with open(r"C:\Users\Chris\Desktop\ansible_python_log_gathering_automation-main\network_devices.json", "r") as file:
         json_devices = json.load(file)
 
     #print(json_devices[0])
@@ -71,8 +71,8 @@ for file in log_file_names_list:
     #open the log files one by one
     #approaching from a per device basis
     #DEPLOYMENT
-    #f = open(r"C:\Users\c.tsialamanis\Desktop\ansible-logs-python\logs\athe-93180-101.log")
-    f = open(r"C:\Users\Chris\Desktop\ansible_python_log_gathering_automation-main\logs\athe-93180-101.log")
+    f = open(r"C:\Users\c.tsialamanis\Desktop\ansible_python_log_gathering_automation-main\logs\athe-93180-101.log")
+    # f = open(r"C:\Users\Chris\Desktop\ansible_python_log_gathering_automation-main\logs\athe-93180-101.log")
     #f = open("./logs/" + file, "r")
     lines = f.readlines()
 
@@ -113,6 +113,8 @@ for file in log_file_names_list:
         #print(json_devices)
         device_position = len(json_devices) - 1
 
+    print(device_position)
+
 
     for line in lines:
         #print(network_devices_list[device_position].connections[0].type)
@@ -141,10 +143,6 @@ for file in log_file_names_list:
                 #if it exists, then if the state is the same, send no notification
                 #if the state is NOT the same, send a notification
                 guard = False
-
-                #keep track of the initial state, if it ends up not changing
-                #(in the last log entry referring to it), do not send the notification
-                initial_state = state
 
                 #print(json_devices[device_position]["connections"])
                 if state != "Up":
@@ -176,9 +174,17 @@ for file in log_file_names_list:
                             new_connection["type"] = "bgp"
                             new_connection["neighbor_IP"] = neighbor_IP
                             new_connection["state"] = state
+                            new_connection["previous_state"] = state
                             #print ("test")
                             network_connection.append(new_connection)
-                    #else, if the connections list is empty, simply add the element
+
+                            #Guarantee send notification
+                            #SEND-NOTIFICATION#
+                            notification_subject = "NEW - Connection DOWN"
+                            notification_body = json.dumps(new_connection, ensure_ascii=False, indent=4)
+                            send_email(notification_subject, notification_body)
+
+                    #else, if the connections list is empty, simply add the element and send notification
                     else:
                         #print("in else")
                         #print (neighbor_IP)
@@ -187,21 +193,41 @@ for file in log_file_names_list:
                         new_connection["type"] = "bgp"
                         new_connection["neighbor_IP"] = neighbor_IP
                         new_connection["state"] = state
+                        new_connection["previous_state"] = state
                         #print ("test")
                         json_devices[device_position]["connections"].append(new_connection)
+
+                        #Guarantee send notification
+                        #SEND-NOTIFICATION#
+                        notification_subject = "NEW - Connection DOWN"
+                        notification_body = json.dumps(new_connection, ensure_ascii=False, indent=4)
+                        send_email(notification_subject, notification_body)
                             
                             
                 #if state is Up, search for the connection, if it was down, update it and send notification
                 else:
                     #print("else")
-                    for network_connection in network_devices_list[device_position]["connections"]:
+                    for network_connection in json_devices[device_position]["connections"]:
                         if network_connection["type"] == "bgp" and network_connection["neighbor_IP"] == neighbor_IP and network_connection["state"] != state:
                             #print("in")
                             network_connection["state"] = state
-                    
 
         except:
             pass
+
+    print(json_devices[0]["connections"][0]["state"])
+
+
+    for device in json_devices:
+        for network_connection in device["connections"]:
+            if network_connection["state"] != network_connection["previous_state"]:
+                #print("sending notification...")
+                #SEND-NOTIFICATION#
+                notification_subject = "Connection State Changed"
+                #print(network_connection)
+                #print(json.dumps(network_connection, ensure_ascii=False, indent=4))
+                notification_body = json.dumps(network_connection, ensure_ascii=False, indent=4)
+                #send_email(notification_subject, notification_body)
 
 
 f.close()
