@@ -1,0 +1,78 @@
+------------------------------------
+VOLTON-SW-CORE-25G-101
+------------------------------------
+2024 Sep 24 09:52:58 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_DOWN_INITIALIZING: Interface Ethernet1/46 is down (Initializing)
+
+2024 Sep 24 09:52:58 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_DOWN_PORT_CHANNEL_MEMBERS_DOWN: Interface port-channel3 is down (No operational members)
+
+2024 Sep 27 15:09:13 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_DOWN_PORT_CHANNEL_MEMBERS_DOWN: Interface port-channel3 is down (No operational members)
+
+2024 Sep 27 15:09:13 VOLTON-SW-CORE-25G-101 %ETH_PORT_CHANNEL-5-PORT_DOWN: port-channel3: Ethernet1/46 is down
+
+2024 Sep 27 15:09:13 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_DOWN_INITIALIZING: Interface Ethernet1/46 is down (Initializing)
+
+2024 Sep 27 15:09:13 VOLTON-SW-CORE-25G-101 %ETHPORT-5-IF_DOWN_PORT_CHANNEL_MEMBERS_DOWN: Interface port-channel3 is down (No operational members)
+
+2024 Sep 29 23:00:24 VOLTON-SW-CORE-25G-101 %BGP-5-ADJCHANGE:  bgp- [21800] (ISP_SERV) neighbor 10.106.27.2 Down - recv:  session closed
+
+2024 Sep 29 23:04:50 VOLTON-SW-CORE-25G-101 %BGP-5-ADJCHANGE:  bgp- [21800] (ISP_SERV) neighbor 10.106.27.2 Down - recv:  session closed
+
+2024 Sep 29 23:12:22 VOLTON-SW-CORE-25G-101 %BGP-5-ADJCHANGE:  bgp- [21800] (ISP_SERV) neighbor 10.106.27.2 Down - recv:  session closed
+
+------------------------------------
+VOLTON-SW-CORE-25G-102
+------------------------------------
+2024 Sep 19 14:11:15 VOLTON-SW-CORE-25G-102 %ETHPORT-5-IF_DOWN_ADMIN_DOWN: Interface loopback120 is down (Administratively down)
+
+2024 Sep 19 14:11:23 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.106.95.1 Down - sent:  other configuration change
+
+2024 Sep 19 14:11:23 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+
+2024 Sep 23 13:44:16 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+
+2024 Sep 23 13:45:16 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+
+2024 Sep 23 13:48:16 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+
+2024 Sep 23 13:51:36 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+
+2024 Sep 23 13:55:00 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+
+2024 Sep 23 14:39:34 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+
+2024 Sep 23 14:49:20 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+
+2024 Sep 24 10:15:28 VOLTON-SW-CORE-25G-102 %BGP-5-ADJCHANGE:  bgp- [23476] (ISP_SERV) neighbor 10.116.27.2 Down - sent:  other configuration change
+
+------------------------------------
+VOLTON-SW-CORE-25G-201
+------------------------------------
+2024 Sep 29 23:00:19 VOLTON-SW-CORE-25G-201 %BGP-5-ADJCHANGE:  bgp- [15893] (ISP_SERV) neighbor 10.106.27.1 Down - sent:  other configuration change
+
+2024 Sep 29 23:04:45 VOLTON-SW-CORE-25G-201 %BGP-5-ADJCHANGE:  bgp- [15893] (ISP_SERV) neighbor 10.106.27.1 Down - sent:  other configuration change
+
+2024 Sep 29 23:12:17 VOLTON-SW-CORE-25G-201 %BGP-5-ADJCHANGE:  bgp- [15893] (ISP_SERV) neighbor 10.106.27.1 Down - sent:  other configuration change
+
+------------------------------------
+VOLTON-SW-CORE-25G-202
+------------------------------------
+2024 Sep 19 14:11:23 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Down - recv:  other configuration change
+
+2024 Sep 23 13:44:21 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Down - recv:  session closed
+
+2024 Sep 23 13:45:21 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Down - recv:  session closed
+
+2024 Sep 23 13:48:21 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Down - recv:  session closed
+
+2024 Sep 23 13:51:41 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Down - recv:  session closed
+
+2024 Sep 23 13:55:05 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Down - recv:  session closed
+
+2024 Sep 23 14:39:39 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Down - recv:  session closed
+
+2024 Sep 23 14:49:25 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Down - recv:  session closed
+
+2024 Sep 23 19:11:29 VOLTON-SW-CORE-25G-202 %ETHPORT-5-IF_DOWN_ADMIN_DOWN: Interface loopback120 is down (Administratively down)
+
+2024 Sep 24 10:15:33 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Down - recv:  session closed
+

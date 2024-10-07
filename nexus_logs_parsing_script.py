@@ -227,7 +227,7 @@ for file in log_file_names_list:
                 #print(network_connection)
                 #print(json.dumps(network_connection, ensure_ascii=False, indent=4))
                 notification_body = json.dumps(network_connection, ensure_ascii=False, indent=4)
-                #send_email(notification_subject, notification_body)
+                send_email(notification_subject, notification_body)
             network_connection["state"] = network_connection["previous_state"]
 
 
