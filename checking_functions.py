@@ -4,7 +4,8 @@ def check_line(token, line, device):
     try:
         if token in line:
             # if "bgp" is in line, then it is a connection
-            if "bgp" in line and ("Up" in line or "Down" in line):
+            if ("bgp" in line or "BGP" in line) and ("Up" in line or "Down" in line):
+                print(line)
                 type = "bgp"
                 network_connection = {}
                 if token == "ADJCHANGE":
