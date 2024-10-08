@@ -5,9 +5,9 @@
         "connections": [
             {
                 "type": "bgp",
+                "state": "Up",
                 "neighbor_IP": "10.106.27.2",
-                "state": "Down",
-                "previous_state": "Down"
+                "previous_state": "Up"
             }
         ]
     },
@@ -17,9 +17,15 @@
         "connections": [
             {
                 "type": "bgp",
+                "state": "Up",
                 "neighbor_IP": "10.106.95.1",
-                "state": "Down",
-                "previous_state": "Down"
+                "previous_state": "Up"
+            },
+            {
+                "type": "bgp",
+                "state": "Up",
+                "neighbor_IP": "10.116.27.2",
+                "previous_state": "Up"
             }
         ]
     },
@@ -29,9 +35,9 @@
         "connections": [
             {
                 "type": "bgp",
+                "state": "Up",
                 "neighbor_IP": "10.106.27.1",
-                "state": "Down",
-                "previous_state": "Down"
+                "previous_state": "Up"
             }
         ]
     },
@@ -41,9 +47,9 @@
         "connections": [
             {
                 "type": "bgp",
+                "state": "Up",
                 "neighbor_IP": "10.116.27.1",
-                "state": "Down",
-                "previous_state": "Down"
+                "previous_state": "Up"
             }
         ]
     }
