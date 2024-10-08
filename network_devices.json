@@ -54,13 +54,33 @@
         ]
     },
     {
-        "name": "thes-8000v-201",
-        "interfaces": [],
-        "connections": []
-    },
-    {
         "name": "THES-8000V-201",
         "interfaces": [],
-        "connections": []
+        "connections": [
+            {
+                "type": "bgp",
+                "state": "Up",
+                "neighbor_IP": "63.130.133.190",
+                "previous_state": "Up"
+            },
+            {
+                "type": "bgp",
+                "state": "Up",
+                "neighbor_IP": "63.130.133.230",
+                "previous_state": "Up"
+            },
+            {
+                "type": "bgp",
+                "state": "Up",
+                "neighbor_IP": "63.130.133.194",
+                "previous_state": "Up"
+            },
+            {
+                "type": "bgp",
+                "state": "Up",
+                "neighbor_IP": "63.130.133.192",
+                "previous_state": "Up"
+            }
+        ]
     }
 ]
