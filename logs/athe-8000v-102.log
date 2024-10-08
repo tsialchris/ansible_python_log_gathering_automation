@@ -1,0 +1,79 @@
+Syslog logging: enabled (0 messages dropped, 3 messages rate-limited, 0 flushes, 0 overruns, xml disabled, filtering disabled)
+
+No Active Message Discriminator.
+
+
+
+No Inactive Message Discriminator.
+
+
+    Console logging: level debugging, 3213 messages logged, xml disabled,
+                     filtering disabled
+    Monitor logging: level debugging, 27 messages logged, xml disabled,
+                     filtering disabled
+    Buffer logging:  level debugging, 3213 messages logged, xml disabled,
+                    filtering disabled
+    Exception Logging: size (4096 bytes)
+    Count and timestamp logging messages: disabled
+    Persistent logging: disabled
+
+No active filter modules.
+
+    Trap logging: level informational, 3217 message lines logged
+        Logging Source-Interface:       VRF Name:
+    TLS Profiles: 
+
+Showing last 50 lines
+
+Log Buffer (131072 bytes):
+
+Oct  3 10:49:36.596: %BGP_SESSION-5-ADJCHANGE: neighbor 63.130.133.186 IPv4 Unicast vpn vrf GN topology base removed from session  BGP Notification sent
+Oct  3 10:49:36.596: %BGP-5-ADJCHANGE: neighbor 63.130.133.228 vpn vrf GN Down BGP Notification sent
+Oct  3 10:49:36.596: %BGP_SESSION-5-ADJCHANGE: neighbor 63.130.133.228 IPv4 Unicast vpn vrf GN topology base removed from session  BGP Notification sent
+Oct  3 10:52:12.466: %BGP-5-NBR_RESET: Neighbor 63.130.133.186 active reset (BGP Notification sent)
+Oct  3 10:52:12.467: %BGP-5-ADJCHANGE: neighbor 63.130.133.186 vpn vrf GN Up 
+Oct  3 10:52:17.014: %BGP-5-ADJCHANGE: neighbor 63.130.133.228 vpn vrf GN Up 
+Oct  3 10:52:17.014: %BGP-5-ADJCHANGE: neighbor 63.130.133.182 vpn vrf GN Up 
+Oct  3 10:52:17.780: %BGP-5-ADJCHANGE: neighbor 63.130.133.184 vpn vrf GN Up 
+Oct  3 10:52:26.990: %BGP-5-ADJCHANGE: neighbor 63.130.133.180 vpn vrf GN Up 
+Oct  3 10:59:17.228: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: raul.sobrin] [Source: 10.150.129.127] [localport: 22] at 13:59:17 EEST Thu Oct 3 2024
+Oct  3 13:53:33.339: %SYS-6-LOGOUT: User raul.sobrin has exited tty session 434(10.150.129.127)
+Oct  3 14:40:55.360: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: raul.sobrin] [Source: 10.150.129.127] [localport: 22] at 17:40:55 EEST Thu Oct 3 2024
+Oct  3 16:55:40.144: %SYS-6-LOGOUT: User raul.sobrin has exited tty session 434(10.150.129.127)
+Oct  4 00:00:39.172: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: network_user] [Source: 10.106.4.35] [localport: 22] at 03:00:39 EEST Fri Oct 4 2024
+Oct  4 00:00:42.318: %SYS-6-LOGOUT: User network_user has exited tty session 434(10.106.4.35)
+Oct  4 02:10:57.746: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 05:10:57 EEST Fri Oct 4 2024
+Oct  4 02:11:19.039: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
+Oct  4 06:13:52.323: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 09:13:52 EEST Fri Oct 4 2024
+Oct  4 06:15:40.898: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
+Oct  4 13:43:14.756: %TRACK-6-STATE: 303 ip sla 303 reachability Up -> Down
+Oct  4 13:43:19.758: %TRACK-6-STATE: 503 ip sla 503 reachability Up -> Down
+Oct  4 13:44:39.760: %TRACK-6-STATE: 303 ip sla 303 reachability Down -> Up
+Oct  4 13:44:44.759: %TRACK-6-STATE: 503 ip sla 503 reachability Down -> Up
+Oct  5 00:00:38.873: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: network_user] [Source: 10.106.4.35] [localport: 22] at 03:00:38 EEST Sat Oct 5 2024
+Oct  5 00:00:42.045: %SYS-6-LOGOUT: User network_user has exited tty session 434(10.106.4.35)
+Oct  5 02:10:50.283: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 05:10:50 EEST Sat Oct 5 2024
+Oct  5 02:11:15.788: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
+Oct  5 06:13:50.933: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 09:13:50 EEST Sat Oct 5 2024
+Oct  5 06:15:42.160: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
+Oct  6 00:00:39.062: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: network_user] [Source: 10.106.4.35] [localport: 22] at 03:00:39 EEST Sun Oct 6 2024
+Oct  6 00:00:42.229: %SYS-6-LOGOUT: User network_user has exited tty session 434(10.106.4.35)
+Oct  6 02:10:57.318: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 05:10:57 EEST Sun Oct 6 2024
+Oct  6 02:11:11.009: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
+Oct  6 06:13:52.401: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 09:13:52 EEST Sun Oct 6 2024
+Oct  6 06:15:40.725: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
+Oct  7 00:00:45.024: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: network_user] [Source: 10.106.4.35] [localport: 22] at 03:00:45 EEST Mon Oct 7 2024
+Oct  7 00:00:48.190: %SYS-6-LOGOUT: User network_user has exited tty session 434(10.106.4.35)
+Oct  7 02:10:45.946: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 05:10:45 EEST Mon Oct 7 2024
+Oct  7 02:11:11.657: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
+Oct  7 06:13:53.408: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 09:13:53 EEST Mon Oct 7 2024
+Oct  7 06:15:43.122: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
+Oct  7 13:22:06.392: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 16:22:06 EEST Mon Oct 7 2024
+Oct  7 13:22:19.662: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
+Oct  8 00:00:39.373: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: network_user] [Source: 10.106.4.35] [localport: 22] at 03:00:39 EEST Tue Oct 8 2024
+Oct  8 00:00:42.535: %SYS-6-LOGOUT: User network_user has exited tty session 434(10.106.4.35)
+Oct  8 02:10:47.510: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 05:10:47 EEST Tue Oct 8 2024
+Oct  8 02:11:12.271: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
+Oct  8 06:13:53.519: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 09:13:53 EEST Tue Oct 8 2024
+Oct  8 06:15:43.373: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
+Oct  8 12:45:17.441: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 15:45:17 EEST Tue Oct 8 2024

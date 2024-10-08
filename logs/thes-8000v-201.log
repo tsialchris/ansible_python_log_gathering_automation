@@ -7,11 +7,11 @@ No Active Message Discriminator.
 No Inactive Message Discriminator.
 
 
-    Console logging: level debugging, 110768 messages logged, xml disabled,
+    Console logging: level debugging, 110779 messages logged, xml disabled,
                      filtering disabled
     Monitor logging: level debugging, 425 messages logged, xml disabled,
                      filtering disabled
-    Buffer logging:  level debugging, 110768 messages logged, xml disabled,
+    Buffer logging:  level debugging, 110779 messages logged, xml disabled,
                     filtering disabled
     Exception Logging: size (4096 bytes)
     Count and timestamp logging messages: disabled
@@ -19,43 +19,32 @@ No Inactive Message Discriminator.
 
 No active filter modules.
 
-    Trap logging: level informational, 110679 message lines logged
+    Trap logging: level informational, 110690 message lines logged
         Logging Source-Interface:       VRF Name:
-    TLS Profiles:
+    TLS Profiles: 
 
 Showing last 50 lines
 
 Log Buffer (131072 bytes):
 
-Oct  7 09:21:00.342: %BGP-5-ADJCHANGE: neighbor 63.130.133.190 vpn vrf GN Down BGP Notification sent
-Oct  7 09:21:00.342: %BGP_SESSION-5-ADJCHANGE: neighbor 63.130.133.190 IPv4 Unicast vpn vrf GN topology base removed from session  BGP Notification sent
-Oct  7 09:21:00.343: %BGP-5-ADJCHANGE: neighbor 63.130.133.230 vpn vrf GN Down BGP Notification sent
-Oct  7 09:21:00.343: %BGP_SESSION-5-ADJCHANGE: neighbor 63.130.133.230 IPv4 Unicast vpn vrf GN topology base removed from session  BGP Notification sent
-Oct  7 09:21:01.449: %BGP-3-NOTIFICATION: sent to neighbor 63.130.133.194 4/0 (hold time expired) 0 bytes
-Oct  7 09:21:01.450: %BGP-5-NBR_RESET: Neighbor 63.130.133.194 reset (BGP Notification sent)
-Oct  7 09:21:01.462: %BGP-5-ADJCHANGE: neighbor 63.130.133.194 vpn vrf GN Down BGP Notification sent
-Oct  7 09:21:01.462: %BGP_SESSION-5-ADJCHANGE: neighbor 63.130.133.194 IPv4 Unicast vpn vrf GN topology base removed from session  BGP Notification sent
-Oct  7 09:21:05.585: %BGP-3-NOTIFICATION: sent to neighbor 63.130.133.192 4/0 (hold time expired) 0 bytes
-Oct  7 09:21:05.586: %BGP-5-NBR_RESET: Neighbor 63.130.133.192 reset (BGP Notification sent)
-Oct  7 09:21:05.599: %BGP-5-ADJCHANGE: neighbor 63.130.133.192 vpn vrf GN Down BGP Notification sent
 Oct  7 09:21:05.599: %BGP_SESSION-5-ADJCHANGE: neighbor 63.130.133.192 IPv4 Unicast vpn vrf GN topology base removed from session  BGP Notification sent
-Oct  7 09:21:12.423: %BGP-3-NOTIFICATION: received from neighbor 63.130.133.230 active 6/7 (Connection Collision Resolution) 0 bytes
+Oct  7 09:21:12.423: %BGP-3-NOTIFICATION: received from neighbor 63.130.133.230 active 6/7 (Connection Collision Resolution) 0 bytes 
 Oct  7 09:21:12.423: %BGP-5-NBR_RESET: Neighbor 63.130.133.230 active reset (BGP Notification received)
-Oct  7 09:21:12.423: %BGP-3-NOTIFICATION: received from neighbor 63.130.133.194 active 6/7 (Connection Collision Resolution) 0 bytes
+Oct  7 09:21:12.423: %BGP-3-NOTIFICATION: received from neighbor 63.130.133.194 active 6/7 (Connection Collision Resolution) 0 bytes 
 Oct  7 09:21:12.423: %BGP-5-NBR_RESET: Neighbor 63.130.133.194 active reset (BGP Notification received)
 Oct  7 09:21:12.427: %BGP-5-ADJCHANGE: neighbor 63.130.133.194 active vpn vrf GN Down BGP Notification received
 Oct  7 09:21:12.427: %BGP_SESSION-5-ADJCHANGE: neighbor 63.130.133.194 IPv4 Unicast vpn vrf GN topology base removed from session  BGP Notification received
 Oct  7 09:21:12.427: %BGP-5-ADJCHANGE: neighbor 63.130.133.230 active vpn vrf GN Down BGP Notification received
 Oct  7 09:21:12.427: %BGP_SESSION-5-ADJCHANGE: neighbor 63.130.133.230 IPv4 Unicast vpn vrf GN topology base removed from session  BGP Notification received
-Oct  7 09:21:12.456: %BGP-5-ADJCHANGE: neighbor 63.130.133.192 vpn vrf GN Up
+Oct  7 09:21:12.456: %BGP-5-ADJCHANGE: neighbor 63.130.133.192 vpn vrf GN Up 
 Oct  7 09:21:12.459: %BGP-5-NBR_RESET: Neighbor 63.130.133.230 passive reset (Peer closed the session)
 Oct  7 09:21:12.459: %BGP-5-NBR_RESET: Neighbor 63.130.133.194 passive reset (Peer closed the session)
-Oct  7 09:21:12.459: %BGP-5-ADJCHANGE: neighbor 63.130.133.188 vpn vrf GN Up
-Oct  7 09:21:12.459: %BGP-5-ADJCHANGE: neighbor 63.130.133.190 vpn vrf GN Up
+Oct  7 09:21:12.459: %BGP-5-ADJCHANGE: neighbor 63.130.133.188 vpn vrf GN Up 
+Oct  7 09:21:12.459: %BGP-5-ADJCHANGE: neighbor 63.130.133.190 vpn vrf GN Up 
 Oct  7 09:21:12.459: %BGP-5-ADJCHANGE: neighbor 63.130.133.194 passive vpn vrf GN Down AFI/SAFI not supported
 Oct  7 09:21:12.459: %BGP-5-ADJCHANGE: neighbor 63.130.133.230 passive vpn vrf GN Down AFI/SAFI not supported
-Oct  7 09:21:22.285: %BGP-5-ADJCHANGE: neighbor 63.130.133.194 vpn vrf GN Up
-Oct  7 09:21:24.325: %BGP-5-ADJCHANGE: neighbor 63.130.133.230 vpn vrf GN Up
+Oct  7 09:21:22.285: %BGP-5-ADJCHANGE: neighbor 63.130.133.194 vpn vrf GN Up 
+Oct  7 09:21:24.325: %BGP-5-ADJCHANGE: neighbor 63.130.133.230 vpn vrf GN Up 
 Oct  7 13:22:06.604: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 16:22:06 EEST Mon Oct 7 2024
 Oct  7 13:22:19.662: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
 Oct  7 15:02:05.958: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 18:02:05 EEST Mon Oct 7 2024
@@ -77,3 +66,14 @@ Oct  8 03:03:08.184: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10
 Oct  8 06:15:44.479: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 09:15:44 EEST Tue Oct 8 2024
 Oct  8 06:17:33.550: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
 Oct  8 06:59:38.362: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 09:59:38 EEST Tue Oct 8 2024
+Oct  8 06:59:49.708: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
+Oct  8 09:02:05.515: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 12:02:05 EEST Tue Oct 8 2024
+Oct  8 09:02:11.462: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
+Oct  8 09:03:08.396: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 12:03:08 EEST Tue Oct 8 2024
+Oct  8 09:03:10.430: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
+Oct  8 09:14:15.773: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 12:14:15 EEST Tue Oct 8 2024
+Oct  8 09:16:34.818: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
+Oct  8 09:17:10.026: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 12:17:10 EEST Tue Oct 8 2024
+Oct  8 09:27:10.842: %SYS-6-TTY_EXPIRE_TIMER: (exec timer expired, tty 434 (10.2.0.6)), user admvolton
+Oct  8 09:27:10.843: %SYS-6-LOGOUT: User admvolton has exited tty session 434(10.2.0.6)
+Oct  8 12:45:17.512: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admvolton] [Source: 10.2.0.6] [localport: 22] at 15:45:17 EEST Tue Oct 8 2024
