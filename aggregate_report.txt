@@ -76,3 +76,41 @@ VOLTON-SW-CORE-25G-202
 
 2024 Sep 24 10:15:33 VOLTON-SW-CORE-25G-202 %BGP-5-ADJCHANGE:  bgp- [25132] (ISP_SERV) neighbor 10.116.27.1 Down - recv:  session closed
 
+------------------------------------
+ATHE-8000V-101
+------------------------------------
+Oct  4 13:43:20.790: %TRACK-6-STATE: 503 ip sla 503 reachability Up -> Down
+
+Oct  4 13:43:25.789: %TRACK-6-STATE: 303 ip sla 303 reachability Up -> Down
+
+Oct  4 13:44:45.816: %TRACK-6-STATE: 503 ip sla 503 reachability Down -> Up
+
+Oct  4 13:44:50.816: %TRACK-6-STATE: 303 ip sla 303 reachability Down -> Up
+
+------------------------------------
+ATHE-8000V-102
+------------------------------------
+Oct  3 10:49:36.596: %BGP-5-ADJCHANGE: neighbor 63.130.133.228 vpn vrf GN Down BGP Notification sent
+
+Oct  4 13:43:14.756: %TRACK-6-STATE: 303 ip sla 303 reachability Up -> Down
+
+Oct  4 13:43:19.758: %TRACK-6-STATE: 503 ip sla 503 reachability Up -> Down
+
+Oct  4 13:44:39.760: %TRACK-6-STATE: 303 ip sla 303 reachability Down -> Up
+
+Oct  4 13:44:44.759: %TRACK-6-STATE: 503 ip sla 503 reachability Down -> Up
+
+------------------------------------
+THES-8000V-201
+------------------------------------
+Oct  7 09:21:12.427: %BGP-5-ADJCHANGE: neighbor 63.130.133.194 active vpn vrf GN Down BGP Notification received
+
+Oct  7 09:21:12.427: %BGP-5-ADJCHANGE: neighbor 63.130.133.230 active vpn vrf GN Down BGP Notification received
+
+Oct  7 09:21:12.459: %BGP-5-ADJCHANGE: neighbor 63.130.133.194 passive vpn vrf GN Down AFI/SAFI not supported
+
+Oct  7 09:21:12.459: %BGP-5-ADJCHANGE: neighbor 63.130.133.230 passive vpn vrf GN Down AFI/SAFI not supported
+
+------------------------------------
+THES-8000V-202
+------------------------------------

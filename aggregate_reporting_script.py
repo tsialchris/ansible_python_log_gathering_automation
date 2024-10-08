@@ -1,7 +1,13 @@
 
 import re
 
-from send_notification import send_email_aggregate
+from parsing_functions import parse_nexus_name
+
+try:
+    from send_notification import send_email_aggregate
+except:
+    print("Error importing aggregate send function")
+    pass
 
 f = open("script_parameters.txt", "r")
 
@@ -36,20 +42,13 @@ for file in log_file_names_list:
     f = open("./logs/" + file, "r")
     lines = f.readlines()
 
-    #get the device's name from the log once
-    #2024 Sep 12 17:46:34 VOLTON-SW-CORE-25G-202 %DAEMON-3-SYSTEM_MSG: NTP: Peer 193.93.164.195 is unreachable - ntpd[17871]
-    first_split = lines[0].split("%")
-    #RESULT:
-    #2024 Sep 12 17:46:34 VOLTON-SW-CORE-25G-202 
-    #DAEMON-3-SYSTEM_MSG: NTP: Peer 193.93.164.195 is unreachable - ntpd[17871]
-    second_split = first_split[0].split(" ")
-    #RESULT:
-    #2024
-    #Sep
-    #12
-    #17:46:34
-    #VOLTON-SW-CORE-25G-202 
-    device_name = second_split[4]
+    if "8000v" in file:
+        # if this is is an 8000v device, the log does not include its name
+        # get it from the filename
+        device_name = file.split(".")[0].upper()
+    else:
+        # get the device's name from the log once
+        device_name = parse_nexus_name(lines[0])
 
     #write the device name to the .txt file
     #overwrite if this is the old report
@@ -71,4 +70,8 @@ for file in log_file_names_list:
     counter = counter + 1
     f1.close()
 
-send_email_aggregate("Aggregate Network Status Report", "Aggregate Report")
+try:
+    send_email_aggregate("Aggregate Network Status Report", "Aggregate Report")
+except:
+    print("Error sending aggregate email")
+    pass
