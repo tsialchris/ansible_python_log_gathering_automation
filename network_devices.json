@@ -52,5 +52,15 @@
                 "previous_state": "Up"
             }
         ]
+    },
+    {
+        "name": "thes-8000v-201",
+        "interfaces": [],
+        "connections": []
+    },
+    {
+        "name": "THES-8000V-201",
+        "interfaces": [],
+        "connections": []
     }
 ]

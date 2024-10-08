@@ -4,4 +4,5 @@ LOG_FILE_NAMES{
     athe-93180-102.log
     thes-93180-201.log
     thes-93180-202.log
+    thes-8000v-201.log
 }
