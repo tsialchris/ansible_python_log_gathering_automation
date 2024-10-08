@@ -82,5 +82,27 @@
                 "previous_state": "Up"
             }
         ]
+    },
+    {
+        "name": "ATHE-8000V-101",
+        "interfaces": [],
+        "connections": []
+    },
+    {
+        "name": "ATHE-8000V-102",
+        "interfaces": [],
+        "connections": [
+            {
+                "type": "bgp",
+                "state": "Up",
+                "neighbor_IP": "63.130.133.228",
+                "previous_state": "Up"
+            }
+        ]
+    },
+    {
+        "name": "THES-8000V-202",
+        "interfaces": [],
+        "connections": []
     }
 ]
